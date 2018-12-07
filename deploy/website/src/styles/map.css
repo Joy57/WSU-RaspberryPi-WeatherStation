@@ -1,0 +1,129 @@
+.google-maps{
+    height: 300px !important;
+}
+
+.recenter-btn{
+    margin-left: 10px;
+}
+
+.average-marker-remove{
+    position: relative;
+    top: 3px;
+    padding-right: 6px;
+}
+
+.sidebar{
+    width: 100%;
+    height: 100%;
+    background-color: white;
+    padding-top: 100px;
+    overflow-y: scroll;
+}
+
+.map-title{
+    text-align: left;
+}
+
+.mode-btn{
+    margin-left: 15px;
+}
+
+.list-item-container{
+    text-align: left;
+    font-size: 14pt;
+    padding: 15px;
+}
+
+.station-name{
+    margin-left: 10px;
+}
+
+.sidebar-coordinates{
+    font-size: 10pt;
+    margin-left: 23pt;
+}
+
+.show-labels-container{
+    text-align: right !important;
+    margin-right: 15px;
+    margin-bottom: 10px;
+}
+
+.all-checkboxes-container{
+    text-align: left !important;
+    margin-left: 15px;
+    margin-bottom: 10px;
+}
+
+.marker-icon{
+    box-shadow: "0px 0px 10px 0px #707070" !important;
+}
+
+.marker-info-title{
+    font-size: 12pt;
+    margin-bottom: 5px !important;
+    font-weight: bold;
+}
+
+.marker-label-title{
+    font-size: 9pt;
+    margin-bottom: 0 !important;
+    font-weight: bold;
+    white-space: nowrap;
+}
+
+.marker-info-text{
+    margin-bottom: 0px;
+    font-size: 10pt;
+}
+
+/* .marker-info-box{
+    position: relative !important;
+    bottom: 80px;
+    left: -25px;
+    min-width: 150px;
+    font-size: 10pt;
+    padding: 10px;
+    background-color: #27ACAC !important;
+    color: #fff;
+    box-shadow: 0px 0px 10px 0px #707070;
+    cursor: pointer;
+    opacity: 0;
+} */
+
+.marker-info-box:after,
+.marker-info-box:after {
+	position: absolute;
+    top: 98.1%;
+    left: 35px;
+    margin-left: -18px;
+    content: '';
+    width: 0;
+    height: 0;
+    border-top: solid 10px #394c73;
+    border-left: solid 10px transparent;
+    border-right: solid 10px transparent;
+}
+
+.marker-label-box:after,
+.marker-label-box:after {
+	position: absolute;
+    top: 98.1%;
+    left: 35px;
+    margin-left: -18px;
+    content: '';
+    width: 0;
+    height: 0;
+    border-top: solid 10px #394c73;
+    border-left: solid 10px transparent;
+    border-right: solid 10px transparent;
+}
+
+.marker-info-box .col-12{
+    padding: 0px;
+}
+
+.map-container{
+    width: 100%;
+    height: 100% !important;
+}

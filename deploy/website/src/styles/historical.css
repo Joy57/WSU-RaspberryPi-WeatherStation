@@ -1,0 +1,62 @@
+.react-datepicker__time-container .react-datepicker__time .react-datepicker__time-box ul.react-datepicker__time-list {
+    padding-left: 0 !important;
+    padding-right: 0 !important;
+}
+
+.loading-spinner{
+    position: absolute;
+    left: 47%;
+    top: 47%;
+}
+
+.react-datepicker {
+    display: flex  !important;
+}
+
+.historical-page-title{
+    margin-top: 100px;
+    margin-bottom: 50px;
+}
+
+.filter{
+    max-width: 800px;
+    float: left;
+}
+
+.filter-btn{
+    margin-left: 40px;
+}
+
+.btn-primary{
+    background-color: #27ACAC !important;
+    border-color: #27ACAC !important;
+}
+
+.btn-secondary{
+    background-color: #dbdbdb !important;
+    border-color: #dbdbdb !important;
+    color: #232323 !important;
+}
+
+.no-padding-left{
+    padding-left: 0px;
+}
+
+.no-padding-right {
+    padding-right: 0px;
+}
+
+.graph{
+    margin-top:40px;
+    width: 100%;
+}
+
+.no-data-alert{
+    margin-top: 60px;
+    width: 100%;
+}
+
+.historical-container{
+    width: 100% !important;
+    margin: 0 auto;
+}

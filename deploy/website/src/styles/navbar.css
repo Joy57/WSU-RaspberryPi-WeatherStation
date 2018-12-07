@@ -1,0 +1,128 @@
+nav {
+    background: #191654;
+    background: -webkit-linear-gradient(to right, #3C3973, #27ACAC);
+    background: linear-gradient(to right, #3C3973, #27ACAC);
+}
+
+nav a {
+    color: #F3F3F3 !important;
+}
+
+.alert-triggered-at{
+    font-size: 10pt;
+    color: #727272;
+}
+
+.download-link{
+    color: #fff !important;
+    margin-right: 20px;
+    white-space: nowrap;
+}
+
+.fa-download{
+    cursor: pointer;
+    margin-left: 5px;
+}
+
+.download-text{
+    cursor: pointer;
+}
+
+.alert-notification-card{
+    padding: 10px;
+    background-color: #F9F9F9 !important;
+    margin-bottom: 10px;
+    cursor: pointer;
+    text-align: left !important;
+    font-size: 12pt !important;
+}
+
+.alert-notification-card-unread{
+    padding: 10px;
+    background-color: rgb(228, 227, 227) !important;
+    margin-bottom: 10px;
+    cursor: pointer;
+    text-align: left !important;
+    font-size: 12pt !important;
+}
+
+.dismiss-all{
+    font-size: 10pt;
+    text-align: right !important;
+    padding-right: 0px;
+    background-color: #fff !important;
+    margin-bottom: 5px;
+}
+
+.user-menu {
+    min-width: 100px !important;
+    text-align: center !important;
+}
+
+.alerts-menu {
+    min-width: 350px !important;
+    max-height: 500px;
+    overflow-y: scroll;
+}
+
+.username-dropdown{
+    top: 3px;
+    white-space: nowrap;
+}
+
+.alerts-dropdown{
+    white-space: nowrap;
+}
+
+.unread {
+    color: #f25757 !important;
+    bottom: 7px;
+    left: 7px;
+    font-size: 12pt;
+    z-index: 50;
+}
+
+.unread-text{
+    color: #fff !important;
+    bottom: 8px;
+    left: 7px;
+    font-size: 7pt;
+    z-index: 999;
+    text-shadow: 0px 0px 1px rgba(0,0,0,0.4);;
+}
+
+.hidden{
+    opacity: 0;
+}
+
+.bell{
+    color: white;
+    padding-right: 20px;
+    z-index: 1;
+    white-space: nowrap;
+}
+
+.nav-link{
+    color: #fff;
+}
+
+.nav-link-dark {
+    color: #535353 !important;
+}
+
+.navbar {
+    justify-content: left !important;
+}
+
+.nav-link:hover {
+    text-decoration: none;
+}
+
+.nav-link:active {
+    text-decoration: none;
+}
+
+.dropdown-item:active {
+    background-color: #ededed !important; 
+    color:#000;
+}

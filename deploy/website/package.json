@@ -1,0 +1,73 @@
+{
+  "name": "weather-station",
+  "version": "0.1.0",
+  "private": true,
+  "dependencies": {
+    "babel-polyfill": "^6.26.0",
+    "bootstrap": "^4.0.0",
+    "chart.js": "^2.7.2",
+    "classnames": "^2.2.5",
+    "dc": "^2.1.9",
+    "dotenv": "^5.0.0",
+    "downloadjs": "^1.4.7",
+    "file-loader": "^1.1.6",
+    "font-awesome": "^4.7.0",
+    "geolib": "^2.0.24",
+    "google-map-react": "^0.32.0",
+    "jquery": "^3.3.1",
+    "js-cookie": "^2.2.0",
+    "moment": "^2.20.1",
+    "moment-range": "^3.1.1",
+    "nodemailer": "^4.4.2",
+    "path": "^0.12.7",
+    "popper.js": "^1.12.9",
+    "react": "^16.2.0",
+    "react-chartjs-2": "^2.7.0",
+    "react-datepicker": "^1.2.2",
+    "react-dom": "^16.2.0",
+    "react-fontawesome": "^1.6.1",
+    "react-loading": "^1.0.4",
+    "react-popper": "^0.8.2",
+    "react-router-dom": "^4.2.2",
+    "react-test-renderer": "^16.2.0",
+    "react-transition-group": "^2.2.1",
+    "reactstrap": "^5.0.0-beta",
+    "url-loader": "^0.6.2"
+  },
+  "devDependencies": {
+    "babel-core": "^6.26.0",
+    "babel-loader": "^7.1.2",
+    "babel-plugin-transform-class-properties": "^6.24.1",
+    "babel-preset-env": "^1.6.1",
+    "babel-preset-es2015": "^6.24.1",
+    "babel-preset-es2016": "^6.24.1",
+    "babel-preset-react": "^6.24.1",
+    "babel-preset-stage-2": "^6.24.1",
+    "chai": "^4.1.2",
+    "chai-webdriver": "^1.2.0",
+    "css-loader": "^0.28.10",
+    "mocha": "^5.0.5",
+    "node-sass": "^4.7.2",
+    "react-scripts": "1.1.0",
+    "sass-loader": "^6.0.7",
+    "selenium-webdriver": "^4.0.0-alpha.1",
+    "style-loader": "^0.20.2",
+    "uglifyjs-webpack-plugin": "^1.2.4",
+    "webpack": "^3.10.0",
+    "webpack-dev-server": "^2.11.1",
+    "webpack-merge": "^4.1.2"
+  },
+  "scripts": {
+    "start": "react-scripts start",
+    "start-prod": "NODE_ENV=production react-scripts start",
+    "build": "webpack --config webpack.prod.js",
+    "test": "mocha",
+    "eject": "react-scripts eject"
+  },
+  "proxy": {
+    "/api": {
+      "target": "http://127.0.0.1:5000/",
+      "secure": false
+    }
+  }
+}

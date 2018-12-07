@@ -1,0 +1,140 @@
+.download-btn{
+    margin-right: 5px;
+}
+
+.error-text{
+    color: #dc3545;
+    font-size: 10pt;
+}
+
+.adminPage{
+    max-width: 850px;
+    margin: auto;
+    margin-top: 125px;
+}
+
+.admin-table{
+    margin: auto;
+    margin-top: 25px;
+    max-width: 700px !important;
+}
+
+.admin-table-username{
+    width: 70%;
+}
+
+.admin-table-buttons{
+    width: 30%;
+}
+
+.permissions-table-username{
+    width: 50%;
+}
+
+.permissions-table-buttons{
+    width: 30%;
+}
+
+.no-users-alert-td{
+    margin-bottom: 0px !important;
+}
+
+.no-users-alert{
+    margin-top: 25px;
+}
+
+.no-auth-alert{
+    margin: auto;
+    margin-top: 100px;
+    max-width: 700px;
+}
+
+.station-title{
+    font-size: 16pt;
+}
+
+.no-stations-alert{
+    max-width: 600px;
+    margin: auto;
+}
+
+.react-datepicker-wrapper{
+    width: 100% !important;
+}
+
+.react-datepicker__input-container{
+    width: 100% !important;
+}
+
+.delete-btn{
+    background-color: none !important;
+    cursor: pointer;
+}
+
+.cancel-btn{
+    margin-left: 5px;
+}
+
+.delete-icon{
+    line-height: 28px;
+    color: #777777;
+}
+
+.save-changes-container{
+    width: 65%;
+}
+
+.delete-container{
+    width: 35%;
+}
+
+.admin-station-container{
+    text-align: left;
+    width: 30%;
+    margin-bottom: 20px;
+}
+
+.admin-station-container .col-12:hover{
+    cursor: pointer;
+}
+
+.admin-station-card{
+    margin: auto;
+    background-color: #F9F9F9 !important;
+    max-width: 600px;
+    padding: 10px;
+    box-shadow: 0px 0px 15px 0px #e8e8e8;
+    border: none !important;
+    border-radius: 10px !important;
+}
+
+.no-padding-left{
+    padding-left: 0px !important;
+}
+
+.no-padding-right{
+    padding-right: 0px !important;
+}
+
+.admin-content {
+    margin-top: 30px;
+    max-width: 600px !important;
+}
+
+.add-btn{
+    background-color: #27ACAC !important;
+    border-color: #27ACAC !important;
+    color: #fff !important;
+}
+
+.station-list-header{
+    margin-bottom: 10px !important;
+}
+
+.right{
+    text-align: right;
+}
+
+.left{
+    text-align: left;
+}

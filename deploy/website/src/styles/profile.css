@@ -1,0 +1,32 @@
+#profile{
+    margin-top: 125px;
+}
+
+.profile-page-title{
+    margin-bottom: 50px;
+}
+
+.col-form-label{
+    text-align: left !important;
+}
+
+.profile-save-btn{
+    margin: 0 auto !important;
+}
+
+.btn-primary{
+    background-color: #27ACAC !important;
+    border-color: #27ACAC !important;
+}
+
+.btn-secondary{
+    background-color: #dbdbdb !important;
+    border-color: #dbdbdb !important;
+    color: #232323 !important;
+}
+
+.profile-container{
+    max-width: 400px;
+    margin: auto;
+    padding-top: 25px;
+}
