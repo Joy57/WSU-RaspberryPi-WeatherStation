@@ -5,14 +5,14 @@ rds = boto3.client('rds')
 
 def create_db():
     response = rds.create_db_instance(
-    DBName='test1',
-    DBInstanceIdentifier='lambda-db1',
+    DBName='weatherstation',
+    DBInstanceIdentifier='wsu-weather-station',
     AllocatedStorage=20,
     DBInstanceClass='db.t2.small',
     Engine='MySQL',
     MasterUsername='wsu',
     MasterUserPassword='wsucapstone2018',
-    AvailabilityZone='us-east-2a',
+    AvailabilityZone='us-east-1a',
     BackupRetentionPeriod=0,
     Port=3306,
     MultiAZ=False,
@@ -41,5 +41,5 @@ def lambda_handler(event, context):
     create_db()
     return {
         'statusCode': 200,
-        'body': json.dumps('completed')
+        'body': json.dumps('Successfully executed RDS Script: please wait at least 3 minutes before continuing to the next step')
     }
