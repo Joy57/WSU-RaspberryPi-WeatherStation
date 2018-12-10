@@ -4,5 +4,5 @@
 sensors:
     temp_pin: 14 # Pin number for the Adafruit DHT temperature/humidity sensor
 server:
-    host: 67.205.153.103 # URL to the weather station website
-    port: 5000 # Port of the express server that is accepting data
+    host: 18.223.21.55 # URL to the weather station website
+    port: 8000 # Port of the express server that is accepting data
