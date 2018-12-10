@@ -45,7 +45,7 @@ class TextStorage(object):
             return True
 
     # Store data in a text file if we are not connected to the internet or the server is down
-    # TODO: Look into encrypting this data in storage
+    # Encryption done here
     def storeWeather(self, weatherdata):
         today = datetime.date.today()
         data = self.constructWeatherString(weatherdata)
