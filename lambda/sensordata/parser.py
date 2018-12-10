@@ -3,6 +3,7 @@ import datetime
 from dateutil import tz
 
 def parser_helper(line):
+    """helper function to parse and return a json data"""
     from_zone = tz.gettz('UTC')
     to_zone = tz.gettz('EST')
     utc = datetime.datetime.now()
@@ -54,11 +55,13 @@ def convertToList(string):
     return line 
 
 def parse(line):
+    """this method has two responsibilites: convert the incoming data to a list and then call the helper method to parse the data. Returns the json data"""
     new_line = convertToList(line)
     data = parser_helper(new_line)
     return data
 
 def parser(line):
+    """main entry point for lambda"""
     # line= "2018-09-18 17:35:02.066199, 28cbe87809185a040a5d, 86.58, 50.83, 994.97, 42.362495442, -83.071719216"
     ret = parse(line)
     resp = json.loads(ret)

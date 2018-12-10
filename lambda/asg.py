@@ -4,6 +4,8 @@ import time
 
 
 def create_auto_scaling():
+    """Create auto scaling group for load balancer"""
+
     autoscaling = boto3.client('autoscaling')
     response = autoscaling.create_auto_scaling_group(
     AutoScalingGroupName='lambda-auto-scaling-group-test1',
@@ -24,7 +26,7 @@ def create_auto_scaling():
     print("auto scaling response-->>",response)
 
 def lambda_handler(event, context):
-    
+    """this function is the main func for lambda"""
     create_auto_scaling()
     return {
         'statusCode': 200,

@@ -3,6 +3,7 @@ import logging
 import rds_config
 import pymysql
 import json
+
 #rds settings 
 rds_host  = rds_config.db_host
 name = rds_config.db_username
@@ -15,6 +16,7 @@ logger.setLevel(logging.INFO)
 
 
 def get_connection():
+    """get a connection to the dbms"""
     try:
         conn = pymysql.connect(rds_host, user=name, passwd=password, db=db_name, connect_timeout=5)
         logger.info("SUCCESS: Connection to RDS mysql instance succeeded")
@@ -25,6 +27,7 @@ def get_connection():
         return "error connecting"
 
 def get_result(apikey):
+    """fetch content from mysql RDS instance"""
     conn = get_connection()
     with conn.cursor() as cur:
         cur.execute("select COUNT(apikey) from stations where apikey='"+str(apikey)+"'")
@@ -41,7 +44,7 @@ def get_result(apikey):
 
 def handler(event, context):
     """
-    This function fetches content from mysql RDS instance
+    main entry point for the lambda
     """
     # print("event type-->", type(event))
     # print("event==> ",event)

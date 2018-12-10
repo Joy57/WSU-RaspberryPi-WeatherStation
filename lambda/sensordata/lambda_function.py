@@ -3,18 +3,17 @@ import logging
 import rds_config
 import pymysql
 import json
-#rds settings
 from parser import parser
 
+#rds settings
 rds_host  = rds_config.db_host
 name = rds_config.db_username
 password = rds_config.db_password
 db_name = rds_config.db_name
 
-
+#GET connections and log event to the cloudwatch
 logger = logging.getLogger()
 logger.setLevel(logging.INFO)
-
 try:
     conn = pymysql.connect(rds_host, user=name, passwd=password, db=db_name, connect_timeout=5)
 except Exception as e:
@@ -23,6 +22,7 @@ except Exception as e:
 logger.info("SUCCESS: Connection to RDS mysql instance succeeded ")
 
 def db(query):
+    """execute the query"""
     with conn.cursor() as cur:
         print(query)
         cur.execute(query)
@@ -32,7 +32,8 @@ def db(query):
     conn.commit()
 
 
-def do_work(line):
+def verify_api(line):
+    """this function calls parser to parse the incoming string and then builds a query"""
     res = parser(line)
     print(res['date'])
     date = str(res['date'])
@@ -75,9 +76,7 @@ def do_work(line):
 
     db(delete_latest)
     db(insert_latest)
-    
-    
-    
+        
     return 1
 
 
@@ -87,7 +86,7 @@ def handler(event, context):
     """
      
     req = event['body']    
-    res = do_work(req)
+    res = verify_api(req)
     print(req)
 
     return {

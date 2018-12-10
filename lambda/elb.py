@@ -8,6 +8,8 @@ ec2 = boto3.client('ec2')
 autoscaling = boto3.client('autoscaling')
 
 def getVpcIds():
+    """retreieves vpc id by making api call to ec2"""
+
     response = ec2.describe_vpcs(
     
 )   
@@ -18,6 +20,7 @@ def getVpcIds():
     return vpc_id
 
 def getSubnets(id):
+    """retrieves subnet ids from the vpc by making call to ec2. Returns a list of subnets"""
     response = ec2.describe_subnets(
     Filters=[
         {
@@ -40,6 +43,7 @@ def getSubnets(id):
     return list_sub    
     
 def create_load_balancer(sub, s_group):
+    """creates a internet facing load balancer in two different subnets. Returns an amazon resource name"""
     response = elbv2.create_load_balancer(
         Name='loadbalancer-joy-final',
         Subnets=[
@@ -70,6 +74,7 @@ def create_load_balancer(sub, s_group):
     return load_arn
     
 def create_target(vpc_id):
+    """create target group for Auto scaling group. Returns a target amazon resource name"""
     response = elbv2.create_target_group(
     Name='my-targets-test2',
     Port=80,
@@ -83,6 +88,7 @@ def create_target(vpc_id):
     return target_arn
 
 def create_listener(target_arn, balancer_arn):
+    """create a http listener for load balancer."""
     response = elbv2.create_listener(
     DefaultActions=[
         {
@@ -97,6 +103,7 @@ def create_listener(target_arn, balancer_arn):
     print("create_listener response-->",response)
 
 def create_launch_config(security_group_ID, key_Name):
+    """create launch configuration to launch from incase one server crashes"""
     response = autoscaling.create_launch_configuration(
     ImageId='ami-057528decc675aa64',
     KeyName= key_Name,
@@ -109,26 +116,9 @@ def create_launch_config(security_group_ID, key_Name):
 
     print(response)
 
-def create_auto_scaling():
-    response = autoscaling.create_auto_scaling_group(
-    AutoScalingGroupName='lambda-auto-scaling-group-test1',
-    AvailabilityZones=[
-        'us-east-1a',
-        'us-east-1b',
-    ],
-    HealthCheckGracePeriod=120,
-    HealthCheckType='ELB',
-    LaunchConfigurationName='lambda-launch-config-test1',
-    LoadBalancerNames=[
-        'lambda-ELB-test',
-    ],
-    MaxSize=2,
-    MinSize=1,
-)
-
-    print("auto scaling response-->>",response)
 
 def lambda_handler(event, context): 
+    """this function is the main method in lambda"""
     id = getVpcIds()
     print("vpc_id--->", id)
     subnets = getSubnets(id)

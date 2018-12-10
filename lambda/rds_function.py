@@ -4,6 +4,7 @@ import boto3
 rds = boto3.client('rds')
 
 def create_db():
+    """creates the rds database instance"""
     response = rds.create_db_instance(
     DBName='weatherstation',
     DBInstanceIdentifier='wsu-weather-station',
@@ -37,7 +38,7 @@ def create_db():
 
 
 def lambda_handler(event, context):
-    
+    """main entry point for lambda"""
     create_db()
     return {
         'statusCode': 200,
