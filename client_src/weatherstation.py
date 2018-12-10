@@ -40,10 +40,9 @@ class Client(object):
             cpu_usage = psutil.cpu_percent()
             ram = psutil.virtual_memory()
             ram_usage = ram.percent
-            #bat = format_time(time.time() - start_time)
             weatherdata = sensors.getSensorData(self.apikey,cpu_usage,ram_usage)
 
-               # pass
+            #Previous semester Posting Method
             #time.sleep(4)
             #try:
                 #r = requests.post(self.URL + '/api/weather', data = serv1)
@@ -57,10 +56,7 @@ class Client(object):
                 #print("Lost connection to server...storing data locally.")
                # textStorage.storeWeather(serv1)
               #  pass
-
-            
-
-            
+              
             #The above commented code is the way previous semester posted to the server. We no longer need that because each individual Pi will not be posting anymore, and only Master will post. 
             #Because of that, each Pi needs to store their data locally and broadcast via LoRa to Master.
             print("Lost connection to server...storing data locally.")

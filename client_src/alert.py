@@ -1,7 +1,6 @@
 import os
 import csv
 from datetime import datetime
-from twilio.rest import Client
 
 #Define indexes and variables from weather station
 date = ""
@@ -19,41 +18,14 @@ cpu_usage_str = ""
 numbersToMessage=[] #List of numbers
 
 # Twilio SMS Alert
-alertNumber = "+15862650844"
-client = Client("ACb3a83adf61207d82409101e116b7dd03","9408eaea678ceac0b1033e4214c1e853")
+alertNumber = "+Phone Number"
+client = Client("Twilio Account","Twilio Account")
 
 #Flag indexes
 alert_Flag_Index_CPU_30_70 = 21
 alert_Flag_Index_CPU_70 = 23
 alert_Flag_Index_RAM_30_70 = 25
 alert_Flag_Index_RAM_70 = 27
-
-# name: stormAlert
-# description: Take in storm prediction from analysis and send an alert to the user about the prediction
-def stormAlert(prediction):
-    sendMessage = True
-    stormPrediction = ""
-
-    if prediction == 0:
-        stormPrediction = "There is a chance of a THUNDERSTORM"
-    elif prediction == 1:
-        stormPrediction = "No incoming inclement weather"
-        sendMessage = False
-    elif prediction == 2:
-        stormPrediction = "There is a chance of SNOW"
-    elif prediction == 3:
-        stormPrediction = "There is a chance of RAIN"
-    else:
-        sendMessage = False
-
-    if sendMessage == True:
-        client.messages.create(
-            to = alertNumber,
-            from_= "+13132469974",
-            body = stormPrediction
-        )
-
-
 
 # name: replaceIndex
 # description: replaces the index value of a string, used for changing index value for each flag
@@ -154,7 +126,7 @@ def checkApiKey(alertFlags, apiKey):
 def readFile(alertFlags, numbers):
     alertFlags[:] = []
     
-    filePath = "/home/pi/WSU-RaspberryPi-WeatherStation-Dev/final_prototype/project/Client/alertFlags.txt"
+    filePath = "Path/to/alertFlags.txt"
     with open(filePath, "r") as f:
         x = 0
         for line in f:
@@ -175,7 +147,7 @@ def readFile(alertFlags, numbers):
 # name: writeToFile
 # description: write everything back into the text file including the changes made
 def writeToFile(alertFlags, numbers):
-    filePath = "/home/pi/WSU-RaspberryPi-WeatherStation-Dev/final_prototype/project/Client/alertFlags.txt"
+    filePath = "path/to/alertFlags.txt"
     
     with open(filePath, 'w') as f:
         f.write("%s" % numbers)
