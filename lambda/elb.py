@@ -98,7 +98,7 @@ def create_listener(target_arn, balancer_arn):
 
 def create_launch_config(security_group_ID, key_Name):
     response = autoscaling.create_launch_configuration(
-    ImageId='ami-05baba7b0f1bc95ce',
+    ImageId='ami-057528decc675aa64',
     KeyName= key_Name,
     InstanceType='t2.micro',
     LaunchConfigurationName='lambda-launch-config-test1',
@@ -113,8 +113,8 @@ def create_auto_scaling():
     response = autoscaling.create_auto_scaling_group(
     AutoScalingGroupName='lambda-auto-scaling-group-test1',
     AvailabilityZones=[
-        'us-east-2a',
-        'us-east-2b',
+        'us-east-1a',
+        'us-east-1b',
     ],
     HealthCheckGracePeriod=120,
     HealthCheckType='ELB',
@@ -133,8 +133,8 @@ def lambda_handler(event, context):
     print("vpc_id--->", id)
     subnets = getSubnets(id)
     print(subnets)
-    security_group_ID = "sg-0a0876f20bed41e27" 
-    keyName = 'us-east-2-WSU'
+    security_group_ID = "sg-0d27a7b25e7db84ab" 
+    keyName = 'US-KeyPair'
     balancer_arn = create_load_balancer(subnets, security_group_ID)
     
     target_arn = create_target(id)

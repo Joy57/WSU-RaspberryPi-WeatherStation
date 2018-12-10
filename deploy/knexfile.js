@@ -2,7 +2,7 @@
 var knex = {
   client: 'mysql',
   connection: {
-    host : 'wsu-weather-station.cxzjmoez6mye.us-east-1.rds.amazonaws.com',
+    host : 'wsu-weather-station.c3mp4kcz4s1w.us-east-1.rds.amazonaws.com',
     port:'3306',
     user : 'wsu',
     password : 'wsucapstone2018',

@@ -28,7 +28,7 @@ def create_db():
     ],
     StorageType='gp2',
     StorageEncrypted=True,
-    KmsKeyId='c7a874bc-5c66-49a5-97bb-e98f498153a0',
+    KmsKeyId='c6ff082e-e8ff-44a1-a84e-47a174aec204',
     CopyTagsToSnapshot=True|False,
     EnableIAMDatabaseAuthentication=False,
     EnablePerformanceInsights=False
